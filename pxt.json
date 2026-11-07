@@ -1,0 +1,21 @@
+{
+    "name": "planetx-rgb",
+    "version": "0.1.0",
+    "description": "Read raw red, green and blue values from the ELECFREAKS PlanetX colour sensor (IIC port)",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
+}
