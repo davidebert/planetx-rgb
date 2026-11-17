@@ -86,7 +86,6 @@ namespace planetxRGB {
      * @param channel which colour channel to read
      */
     //% blockId=planetxrgb_value block="RGB %channel value (slow)"
-    //% help=github:planetx-rgb/docs/planetxRGB/channel-value
     //% weight=100
     export function channelValue(channel: RGBChannel): number {
         if (!probed) {
