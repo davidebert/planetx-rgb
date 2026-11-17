@@ -135,4 +135,27 @@ namespace planetxRGB {
                 return 0
         }
     }
+
+    /**
+     * Quick red-only reading for time-critical loops (no waiting, no other channels).
+     * Gives the same red value as the full block.
+     */
+    //% blockId=planetxrgb_red_fast block="colour sensor red value (fast)"
+    //% weight=90
+    export function fastRed(): number {
+        if (!probed) {
+            initSensor()
+        }
+        let r = 0
+        if (newSensor) {
+            pins.i2cWriteNumber(NEW_ADDR, 0xA0, NumberFormat.UInt8BE)
+            r = pins.i2cReadNumber(NEW_ADDR, NumberFormat.UInt16LE)
+            r *= 1.3 * 0.47 * 0.83
+            r = Math.min(r, 4095.9356)
+        } else {
+            pins.i2cWriteNumber(APDS9960_ADDR, APDS9960_RDATAL, NumberFormat.UInt8BE)
+            r = pins.i2cReadNumber(APDS9960_ADDR, NumberFormat.UInt16LE)
+        }
+        return Math.round(r)
+    }
 }
