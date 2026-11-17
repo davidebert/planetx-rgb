@@ -37,6 +37,7 @@ namespace planetxRGB {
     // Which sensor was found. Detection runs once, on the first reading.
     let probed = false
     let newSensor = false
+    let silverCount = 0
 
     function i2cWriteReg(addr: number, reg: number, value: number): void {
         let buf = pins.createBuffer(2)
@@ -84,7 +85,7 @@ namespace planetxRGB {
      * Each call measures again, so the value is never out of date.
      * @param channel which colour channel to read
      */
-    //% blockId=planetxrgb_value block="colour sensor %channel value"
+    //% blockId=planetxrgb_value block="%channel value (slow)"
     //% weight=100
     export function channelValue(channel: RGBChannel): number {
         if (!probed) {
@@ -140,8 +141,38 @@ namespace planetxRGB {
      * Quick red-only reading for time-critical loops (no waiting, no other channels).
      * Gives the same red value as the full block.
      */
-    //% blockId=planetxrgb_red_fast block="colour sensor red value (fast)"
+    //% blockId=planetxrgb_red_fast block="red value (fast)"
     //% weight=90
+
+    /**
+     * Get the colour sensor ready. Put this in "on start".
+     */
+    //% blockId=planetxrgb_setup block="set up colour sensor"
+    //% weight=110
+    export function setupSensor(): void {
+        if (!probed) {
+            initSensor()
+        }
+    }
+
+    /**
+     * True when the sensor sees shiny silver foil (several readings in a row).
+     * Call this once per loop.
+     * @param threshold red value above which something counts as silver
+     */
+    //% blockId=planetxrgb_silver block="colour sensor sees silver || threshold %threshold"
+    //% threshold.defl=1500
+    //% expandableArgumentMode="toggle"
+    //% weight=100
+    export function seesSilver(threshold: number = 1500): boolean {
+        if (fastRed() > threshold) {
+            silverCount += 1
+        } else {
+            silverCount = 0
+        }
+        return silverCount >= 3
+    }
+    
     export function fastRed(): number {
         if (!probed) {
             initSensor()
