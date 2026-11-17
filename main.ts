@@ -86,7 +86,7 @@ namespace planetxRGB {
      * @param channel which colour channel to read
      */
     //% blockId=planetxrgb_value block="RGB %channel value (slow)"
-    //% help=planetxRGB/channel-value       (on channelValue)
+    //% help=github:planetx-rgb/doc/planetxRGB/channel-value       (on channelValue)
     //% weight=100
     export function channelValue(channel: RGBChannel): number {
         if (!probed) {
@@ -143,7 +143,7 @@ namespace planetxRGB {
      * Get the colour sensor ready. Put this in "on start".
      */
     //% blockId=planetxrgb_setup block="set up colour sensor"
-    //% help=planetxRGB/setup-sensor        (on setupSensor)
+    //% help=github:planetx-rgb/doc/planetxRGB/setup-sensor        (on setupSensor)
     //% weight=110
     export function setupSensor(): void {
         if (!probed) {
@@ -158,7 +158,7 @@ namespace planetxRGB {
      * @param threshold red value above which something counts as silver
      */
     //% blockId=planetxrgb_silver block="see silver || threshold %threshold"
-    //% help=planetxRGB/sees-silver         (on seesSilver)
+    //% help=github:planetx-rgb/doc/planetxRGB/sees-silver         (on seesSilver)
     //% threshold.defl=1500
     //% expandableArgumentMode="toggle"
     //% weight=100
@@ -176,7 +176,7 @@ namespace planetxRGB {
      * Gives the same red value as the full block.
      */
     //% blockId=planetxrgb_red_fast block="red value (fast)"
-    //% help=planetxRGB/red-fast            (on fastRed)
+    //% help=github:planetx-rgb/doc/planetxRGB/red-fast            (on fastRed)
     //% weight=90
     export function fastRed(): number {
         if (!probed) {
