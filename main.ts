@@ -85,7 +85,7 @@ namespace planetxRGB {
      * Each call measures again, so the value is never out of date.
      * @param channel which colour channel to read
      */
-    //% blockId=planetxrgb_value block="%channel value (slow)"
+    //% blockId=planetxrgb_value block="RGB %channel value (slow)"
     //% weight=100
     export function channelValue(channel: RGBChannel): number {
         if (!probed) {
