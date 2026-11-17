@@ -96,7 +96,7 @@ namespace planetxRGB {
         let b = 0
 
         if (newSensor) {
-            basic.pause(100)
+            basic.pause(10)
             r = readWord(NEW_ADDR, 0xA0)
             g = readWord(NEW_ADDR, 0xA2)
             b = readWord(NEW_ADDR, 0xA4)
