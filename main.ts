@@ -137,12 +137,6 @@ namespace planetxRGB {
         }
     }
 
-    /**
-     * Quick red-only reading for time-critical loops (no waiting, no other channels).
-     * Gives the same red value as the full block.
-     */
-    //% blockId=planetxrgb_red_fast block="red value (fast)"
-    //% weight=90
 
     /**
      * Get the colour sensor ready. Put this in "on start".
@@ -156,11 +150,12 @@ namespace planetxRGB {
     }
 
     /**
-     * True when the sensor sees shiny silver foil (several readings in a row).
+     * True when the sensor reads a red value above a threshold (several readings in a row).
+     * The threshold value distinguished white from silver foil
      * Call this once per loop.
      * @param threshold red value above which something counts as silver
      */
-    //% blockId=planetxrgb_silver block="colour sensor sees silver || threshold %threshold"
+    //% blockId=planetxrgb_silver block="See silver || threshold %threshold"
     //% threshold.defl=1500
     //% expandableArgumentMode="toggle"
     //% weight=100
@@ -172,7 +167,13 @@ namespace planetxRGB {
         }
         return silverCount >= 3
     }
-    
+
+    /**
+     * Quick red-only reading for time-critical loops (no waiting, no other channels).
+     * Gives the same red value as the full block.
+     */
+    //% blockId=planetxrgb_red_fast block="Red value (fast)"
+    //% weight=90
     export function fastRed(): number {
         if (!probed) {
             initSensor()
