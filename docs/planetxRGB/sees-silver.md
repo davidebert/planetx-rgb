@@ -62,3 +62,7 @@ basic.forever(function () {
 ## See also
 
 [set up colour sensor](/reference/planetxrgb/setup-sensor), [red value (fast)](/reference/planetxrgb/red-fast)
+
+```package
+planetx-rgb=github:davidebert/planetx-rgb
+```
