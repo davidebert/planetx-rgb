@@ -29,3 +29,7 @@ basic.forever(function () {
 ## See also
 
 [colour sensor sees silver](/reference/planetxrgb/sees-silver), [colour sensor red value (quick)](/reference/planetxrgb/red-fast)
+
+```package
+planetx-rgb=github:davidebert/planetx-rgb
+```
