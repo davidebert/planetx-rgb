@@ -43,3 +43,7 @@ basic.forever(function () {
 ## See also
 
 [colour sensor sees silver](/reference/planetxrgb/sees-silver), [set up colour sensor](/reference/planetxrgb/setup-sensor)
+
+```package
+planetx-rgb=github:davidebert/planetx-rgb
+```
