@@ -28,7 +28,7 @@ basic.forever(function () {
 
 ## See also
 
-[colour sensor sees silver](/reference/planetxrgb/sees-silver), [colour sensor red value (quick)](/reference/planetxrgb/red-fast)
+[colour sensor sees silver](./sees-silver), [colour sensor red value (./red-fast)
 
 ```package
 planetx-rgb=github:davidebert/planetx-rgb
