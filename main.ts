@@ -172,6 +172,48 @@ namespace planetxRGB {
     }
 
     /**
+     * Quick single-colour reading for time-critical loops (no waiting).
+     * Reads only the colour you pick, so it is quicker than the slow block.
+     * Note: green and blue skip the slow block's red-dominant correction,
+     * so don't compare fast and slow readings against the same threshold.
+     * @param channel which colour channel to read
+     */
+    //% blockId=planetxrgb_fast_colour block="fast %channel value"
+    //% help=github:planetx-rgb/docs/planetxRGB/fast-colour
+    //% weight=95
+    export function fastColour(channel: RGBChannel): number {
+        if (!probed) {
+            initSensor()
+        }
+        let v = 0
+        if (newSensor) {
+            let reg = 0xA0
+            let scale = 1.3 * 0.47 * 0.83
+            if (channel == RGBChannel.Green) {
+                reg = 0xA2
+                scale = 0.69 * 0.56 * 0.83
+            } else if (channel == RGBChannel.Blue) {
+                reg = 0xA4
+                scale = 0.80 * 0.415 * 0.83
+            }
+            pins.i2cWriteNumber(NEW_ADDR, reg, NumberFormat.UInt8BE)
+            v = pins.i2cReadNumber(NEW_ADDR, NumberFormat.UInt16LE)
+            v *= scale
+            v = Math.min(v, 4095.9356)
+        } else {
+            let reg = APDS9960_RDATAL
+            if (channel == RGBChannel.Green) {
+                reg = APDS9960_GDATAL
+            } else if (channel == RGBChannel.Blue) {
+                reg = APDS9960_BDATAL
+            }
+            pins.i2cWriteNumber(APDS9960_ADDR, reg, NumberFormat.UInt8BE)
+            v = pins.i2cReadNumber(APDS9960_ADDR, NumberFormat.UInt16LE)
+        }
+        return Math.round(v)
+    }
+    
+    /**
      * Quick red-only reading for time-critical loops (no waiting, no other channels).
      * Gives the same red value as the full block.
      */
