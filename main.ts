@@ -3,7 +3,7 @@
  * sensor (IIC port) on the micro:bit.
  *
  * The sensor-handling code is adapted from ELECFREAKS' pxt-PlanetX extension
- * (MIT licence, see LICENSE). The RGB block is by davidebert.
+ * (MIT licence, see LICENSE). The RGB blocks are by David Ebert.
  */
 
 //% color=#00B1ED icon="" weight=90 block="PlanetX RGB"
