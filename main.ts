@@ -152,25 +152,6 @@ namespace planetxRGB {
         }
     }
 
-/*     /**
-     * True when the sensor reads a red value above a threshold (several readings in a row).
-     * The threshold value distinguished white from silver foil
-     * Call this once per loop.
-     * @param threshold red value above which something counts as silver
-     */
-    //% blockId=planetxrgb_silver block="see silver || threshold %threshold"
-    //% help=github:planetx-rgb/docs/planetxRGB/sees-silver
-    //% threshold.defl=1500
-    //% expandableArgumentMode="toggle"
-    //% weight=100
-    export function seesSilver(threshold: number = 1500): boolean {
-        if (fastRed() > threshold) {
-            silverCount += 1
-        } else {
-            silverCount = 0
-        }
-        return silverCount >= 3
-    } */
 
     /**
      * Quick single-colour reading for time-critical loops (no waiting).
@@ -219,27 +200,4 @@ namespace planetxRGB {
         return Math.round(v)
     }
     
-/*     /**
-     * Quick red-only reading for time-critical loops (no waiting, no other channels).
-     * Gives the same red value as the full block.
-     */
-    //% blockId=planetxrgb_red_fast block="red value (fast)"
-    //% help=github:planetx-rgb/docs/planetxRGB/red-fast
-    //% weight=90
-    export function fastRed(): number {
-        if (!probed) {
-            initSensor()
-        }
-        let r = 0
-        if (newSensor) {
-            pins.i2cWriteNumber(NEW_ADDR, 0xA0, NumberFormat.UInt8BE)
-            r = pins.i2cReadNumber(NEW_ADDR, NumberFormat.UInt16LE)
-            r *= 1.3 * 0.47 * 0.83
-            r = Math.min(r, 4095.9356)
-        } else {
-            pins.i2cWriteNumber(APDS9960_ADDR, APDS9960_RDATAL, NumberFormat.UInt8BE)
-            r = pins.i2cReadNumber(APDS9960_ADDR, NumberFormat.UInt16LE)
-        }
-        return Math.round(r)
-    } */
 }
