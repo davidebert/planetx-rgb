@@ -16,7 +16,7 @@ Each time this block runs, it waits about a tenth of a second for a fresh measur
 
 ## Returns
 
-* a [number](/types/number): the reading for that colour, from 0 up to about 4096.
+* a number: the reading for that colour is from 0 up to about 4096.
 
 ## Example
 
