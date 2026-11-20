@@ -36,12 +36,12 @@ basic.forever(function () {
 
 ## Tips
 
-* **Don't use this block inside a line-following loop.** The wait makes the robot slow to react and it will drift off the line. Use [colour sensor red value (quick)](/reference/planetxrgb/red-fast) or [colour sensor sees silver](/reference/planetxrgb/sees-silver) instead.
+* **Don't use this block inside a line-following loop.** The wait makes the robot slow to react and it will drift off the line. Use [colour sensor value (fast)](/reference/planetxrgb/red-fast) instead.
 * This block is good for checking colours when speed doesn't matter, for example when sorting coloured objects or testing the sensor.
 
 ## See also
 
-[colour sensor red value (quick)](./red-fast), [set up colour sensor](./setup-sensor)
+[colour sensor red value (quick)](./red-fast)
 
 ```package
 planetx-rgb=github:davidebert/planetx-rgb
