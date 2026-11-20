@@ -83,6 +83,7 @@ namespace planetxRGB {
     /**
      * Take a fresh reading from the colour sensor and return one channel.
      * Each call measures again, so the value is never out of date.
+     * 
      * @param channel which colour channel to read
      */
     //% blockId=planetxrgb_value block="RGB %channel value (slow)"
@@ -151,7 +152,7 @@ namespace planetxRGB {
         }
     }
 
-    /**
+/*     /**
      * True when the sensor reads a red value above a threshold (several readings in a row).
      * The threshold value distinguished white from silver foil
      * Call this once per loop.
@@ -169,7 +170,7 @@ namespace planetxRGB {
             silverCount = 0
         }
         return silverCount >= 3
-    }
+    } */
 
     /**
      * Quick single-colour reading for time-critical loops (no waiting).
@@ -187,9 +188,12 @@ namespace planetxRGB {
         }
         let v = 0
         if (newSensor) {
-            let reg = 0xA0
-            let scale = 1.3 * 0.47 * 0.83
-            if (channel == RGBChannel.Green) {
+            let reg = 0
+            let scale = 0
+            if (channel == RGBChannel.Red){
+                reg = 0xA0
+                scale = 1.3 * 0.47 * 0.83
+            } else if (channel == RGBChannel.Green) {
                 reg = 0xA2
                 scale = 0.69 * 0.56 * 0.83
             } else if (channel == RGBChannel.Blue) {
@@ -201,8 +205,10 @@ namespace planetxRGB {
             v *= scale
             v = Math.min(v, 4095.9356)
         } else {
-            let reg = APDS9960_RDATAL
-            if (channel == RGBChannel.Green) {
+            let reg = 0
+            if (channel = RGBChannel.Red) {
+                reg = APDS9960_RDATAL
+            } else if (channel == RGBChannel.Green) {
                 reg = APDS9960_GDATAL
             } else if (channel == RGBChannel.Blue) {
                 reg = APDS9960_BDATAL
@@ -213,7 +219,7 @@ namespace planetxRGB {
         return Math.round(v)
     }
     
-    /**
+/*     /**
      * Quick red-only reading for time-critical loops (no waiting, no other channels).
      * Gives the same red value as the full block.
      */
@@ -235,5 +241,5 @@ namespace planetxRGB {
             r = pins.i2cReadNumber(APDS9960_ADDR, NumberFormat.UInt16LE)
         }
         return Math.round(r)
-    }
+    } */
 }
