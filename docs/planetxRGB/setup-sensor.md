@@ -17,7 +17,7 @@ Set up the sensor once, then use it in the **forever** loop.
 ```blocks
 planetxRGB.setupSensor()
 basic.forever(function () {
-    basic.showNumber(planetxRGB.fastRed())
+    basic.showNumber(planetxRGB.fastColour(planetxRGB.RGBChannel.Red))
 })
 ```
 
@@ -28,7 +28,7 @@ basic.forever(function () {
 
 ## See also
 
-[colour sensor sees silver](./sees-silver), [colour sensor red value (./red-fast)
+[colour sensor value (slow)](./channel-value), [colour sensor value (fast)](./colour-fast)
 
 ```package
 planetx-rgb=github:davidebert/planetx-rgb
