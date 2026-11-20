@@ -187,7 +187,7 @@ namespace planetxRGB {
             v = Math.min(v, 4095.9356)
         } else {
             let reg = 0
-            if (channel = RGBChannel.Red) {
+            if (channel == RGBChannel.Red) {
                 reg = APDS9960_RDATAL
             } else if (channel == RGBChannel.Green) {
                 reg = APDS9960_GDATAL
