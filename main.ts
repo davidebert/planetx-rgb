@@ -178,7 +178,7 @@ namespace planetxRGB {
      * so don't compare fast and slow readings against the same threshold.
      * @param channel which colour channel to read
      */
-    //% blockId=planetxrgb_fast_colour block="fast %channel value"
+    //% blockId=planetxrgb_fast_colour block="RGB %channel value (fast)"
     //% help=github:planetx-rgb/docs/planetxRGB/fast-colour
     //% weight=95
     export function fastColour(channel: RGBChannel): number {
