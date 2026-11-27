@@ -12,7 +12,7 @@ When the sensor is first used, the extension has to find out which version of th
 
 ## Example
 
-Set up the sensor once, then use it in the **forever** loop.
+Set up the sensor once at the start, then use it in the **forever** loop.
 
 ```blocks
 planetxRGB.setupSensor()
@@ -24,7 +24,7 @@ basic.forever(function () {
 ## Tips
 
 * Use this block **once**, in **on start**.
-* If you forget it, the sensor will still set itself up the first time you read it, but your robot may freeze for a moment at that point.
+* If you forget to include this block, the sensor will still set itself up the first time you read it, but your robot may freeze for a moment at that point.
 
 ## See also
 
