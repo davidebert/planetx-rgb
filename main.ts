@@ -87,6 +87,7 @@ namespace planetxRGB {
      * @param channel which colour channel to read
      */
     //% blockId=planetxrgb_value block="RGB %channel value (slow)"
+    //% deprecated=true
     //% help=github:planetx-rgb/docs/planetxRGB/channel-value
     //% weight=100
     export function channelValue(channel: RGBChannel): number {
@@ -166,6 +167,7 @@ namespace planetxRGB {
     export function fastColour(channel: RGBChannel): number {
         if (!probed) {
             initSensor()
+            basic.pause(100)
         }
         let v = 0
         if (newSensor) {
