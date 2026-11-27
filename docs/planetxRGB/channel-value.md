@@ -1,4 +1,4 @@
-# colour sensor [red/green/blue] value
+# colour sensor [red/green/blue] value (slow)
 
 Takes a new measurement and reports the red, green or blue value.
 
