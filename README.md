@@ -5,7 +5,7 @@ The standard PlanetX color and light code blocks can't tell silver foil from bri
 
 ## Setting up
 
-Put **set up colour sensor** in your **on start** block. It finds the sensor and gets it ready, which takes up to a second. Doing it at the start means the robot doesn't pause later while it is following the line.
+Put **set up color sensor** in your **on start** block. It finds the sensor and gets it ready, which takes up to a second. Doing it at the start means the robot doesn't pause later while it is following the line.
 
 ```blocks
 planetxRGB.setupSensor()
@@ -13,7 +13,7 @@ planetxRGB.setupSensor()
 
 ## Blocks
 
-### set up colour sensor
+### set up color sensor
 
 Gets the sensor ready. Use it once, in **on start**.
 
@@ -28,7 +28,7 @@ A line-following robot corrects its steering many times per second. If one step 
 
 ## Supported hardware
 
-- ELECFREAKS PlanetX colour sensor V2.0 (and the older APDS9960-based version)
+- ELECFREAKS PlanetX color sensor V2.0 (and the older APDS9960-based version)
 - micro:bit V2 (recommended) and V1
 
 ## Credits and License
