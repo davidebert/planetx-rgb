@@ -161,7 +161,7 @@ namespace planetxRGB {
      * @param channel which color channel to read
      */
     //% blockId=planetxrgb_fast_color block="RGB %channel value (fast)"
-    //% help=github:planetx-rgb/docs/planetxRGB/fast-color
+    //% help=github:planetx-rgb/docs/planetxRGB/fast-colour
     //% weight=95
     export function fastColor(channel: RGBChannel): number {
         if (!probed) {
