@@ -1,5 +1,5 @@
 /**
- * Read raw red, green and blue values from the ELECFREAKS PlanetX colour
+ * Read raw red, green and blue values from the ELECFREAKS PlanetX color
  * sensor (IIC port) on the micro:bit.
  *
  * The sensor-handling code is adapted from ELECFREAKS' pxt-PlanetX extension
@@ -18,10 +18,10 @@ namespace planetxRGB {
         Blue = 3
     }
 
-    // Newer PlanetX colour sensor
+    // Newer PlanetX color sensor
     const NEW_ADDR = 0x43
 
-    // Older PlanetX colour sensor (APDS9960)
+    // Older PlanetX color sensor (APDS9960)
     const APDS9960_ADDR = 0x39
     const APDS9960_ENABLE = 0x80
     const APDS9960_ATIME = 0x81
@@ -37,7 +37,6 @@ namespace planetxRGB {
     // Which sensor was found. Detection runs once, on the first reading.
     let probed = false
     let newSensor = false
-    let silverCount = 0
 
     function i2cWriteReg(addr: number, reg: number, value: number): void {
         let buf = pins.createBuffer(2)
@@ -81,10 +80,10 @@ namespace planetxRGB {
     }
 
     /**
-     * Take a fresh reading from the colour sensor and return one channel.
+     * Take a fresh reading from the color sensor and return one channel.
      * Each call measures again, so the value is never out of date.
      * 
-     * @param channel which colour channel to read
+     * @param channel which color channel to read
      */
     //% blockId=planetxrgb_value block="RGB %channel value (slow)"
     //% deprecated=true
@@ -142,9 +141,9 @@ namespace planetxRGB {
 
 
     /**
-     * Get the colour sensor ready. Put this in "on start".
+     * Get the color sensor ready. Put this in "on start".
      */
-    //% blockId=planetxrgb_setup block="set up colour sensor"
+    //% blockId=planetxrgb_setup block="set up color sensor"
     //% help=github:planetx-rgb/docs/planetxRGB/setup-sensor
     //% weight=110
     export function setupSensor(): void {
@@ -155,16 +154,16 @@ namespace planetxRGB {
 
 
     /**
-     * Quick single-colour reading for time-critical loops (no waiting).
-     * Reads only the colour you pick, so it is quicker than the slow block.
+     * Quick single-color reading for time-critical loops (no waiting).
+     * Reads only the color you pick, so it is quicker than the slow block.
      * Note: green and blue skip the slow block's red-dominant correction,
      * so don't compare fast and slow readings against the same threshold.
      * @param channel which colour channel to read
      */
-    //% blockId=planetxrgb_fast_colour block="RGB %channel value (fast)"
-    //% help=github:planetx-rgb/docs/planetxRGB/fast-colour
+    //% blockId=planetxrgb_fast_color block="RGB %channel value (fast)"
+    //% help=github:planetx-rgb/docs/planetxRGB/fast-color
     //% weight=95
-    export function fastColour(channel: RGBChannel): number {
+    export function fastColor(channel: RGBChannel): number {
         if (!probed) {
             initSensor()
             basic.pause(100)
