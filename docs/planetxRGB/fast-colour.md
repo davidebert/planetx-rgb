@@ -69,5 +69,5 @@ basic.forever(function () {
 [PlanetX RGB](/pkg/planetx-rgb)
 
 ```package
-planetx-rgb=github:planetx-rgb
+planetx-rgb=github:davidebert/planetx-rgb
 ```
