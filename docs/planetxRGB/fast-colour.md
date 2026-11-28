@@ -61,12 +61,8 @@ basic.forever(function () {
 * Each call reads **one** channel. If you only need to tell silver foil from a white surface, read one channel and compare it with your threshold.
 * Reading all three channels one after the other means each value is taken at a slightly different moment. If you move over a colour edge between reads, the three numbers may not match up.
 * This block does not wait for a new measurement, so if you call it repeatedly very quickly you may get the same value more than once. This is normal.
-* This block only measures red, green and blue levels. To find the hue or to name a colour (for example "red" or "yellow"), use the color blocks from the PlanetX extension that are designed for that.
+* This block only measures red, green and blue levels. To find the hue or to name a color (for example "red" or "yellow"), use the color blocks from the PlanetX extension that are designed for that.
 * Thresholds you find with this block are specific to this block. Do not reuse numbers from other color-reading blocks.
-
-## See also
-
-[PlanetX RGB](/pkg/planetx-rgb)
 
 ```package
 planetx-rgb=github:davidebert/planetx-rgb
