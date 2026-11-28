@@ -158,7 +158,7 @@ namespace planetxRGB {
      * Reads only the color you pick, so it is quicker than the slow block.
      * Note: green and blue skip the slow block's red-dominant correction,
      * so don't compare fast and slow readings against the same threshold.
-     * @param channel which colour channel to read
+     * @param channel which color channel to read
      */
     //% blockId=planetxrgb_fast_color block="RGB %channel value (fast)"
     //% help=github:planetx-rgb/docs/planetxRGB/fast-color
