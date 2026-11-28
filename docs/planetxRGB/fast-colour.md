@@ -3,7 +3,7 @@
 Read the red, green or blue level from the PlanetX color sensor without any waiting.
 
 ```sig
-planetxRGB.fastColour(RGBChannel.Red)
+planetxRGB.fastColor(RGBChannel.Red)
 ```
 
 ## Parameters
@@ -38,7 +38,7 @@ The threshold value that shoudl be used is determined as described above.
 
 ```blocks
 basic.forever(function () {
-    if (planetxRGB.fastColour(RGBChannel.Red) > 1500) {
+    if (planetxRGB.fastColor(RGBChannel.Red) > 1500) {
         basic.showIcon(IconNames.Yes)
     } else {
         basic.showIcon(IconNames.No)
@@ -52,7 +52,7 @@ This program shows the current green level on the micro:bit screen.
 
 ```blocks
 basic.forever(function () {
-    basic.showNumber(planetxRGB.fastColour(RGBChannel.Green))
+    basic.showNumber(planetxRGB.fastColor(RGBChannel.Green))
 })
 ```
 
