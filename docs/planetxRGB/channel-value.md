@@ -1,4 +1,4 @@
-# colour sensor [red/green/blue] value (slow)
+# color sensor [red/green/blue] value (slow)
 
 Takes a new measurement and reports the red, green or blue value.
 
@@ -8,15 +8,15 @@ planetxRGB.channelValue(planetxRGB.RGBChannel.Red)
 
 ## What it does
 
-Each time this block runs, it waits about a tenth of a second for a fresh measurement from the sensor, then gives you the value for the colour channel you chose. The reading is always up to date, but the wait makes it **slow**.
+Each time this block runs, it waits about a tenth of a second for a fresh measurement from the sensor, then gives you the value for the color channel you chose. The reading is always up to date, but the wait makes it **slow**.
 
 ## Parameters
 
-* **channel**: which colour to read: **red**, **green** or **blue**.
+* **channel**: which color to read: **red**, **green** or **blue**.
 
 ## Returns
 
-* a number: the reading for that colour is from 0 up to about 4096.
+* a number: the reading for that color is from 0 up to about 4096.
 
 ## Example
 
@@ -36,12 +36,12 @@ basic.forever(function () {
 
 ## Tips
 
-* **Don't use this block inside a line-following loop.** The wait makes the robot slow to react and it will drift off the line. Use [colour sensor value (fast)](/reference/planetxrgb/red-fast) instead.
-* This block is good for checking colours when speed doesn't matter, for example when sorting coloured objects or testing the sensor.
+* **Don't use this block inside a line-following loop.** The wait makes the robot slow to react and it will drift off the line. Use [color sensor value (fast)](/reference/planetxrgb/red-fast) instead.
+* This block is good for checking colors when speed doesn't matter, for example when sorting colored objects or testing the sensor.
 
 ## See also
 
-[colour sensor red value (quick)](./red-fast)
+[color sensor red value (quick)](./red-fast)
 
 ```package
 planetx-rgb=github:davidebert/planetx-rgb
