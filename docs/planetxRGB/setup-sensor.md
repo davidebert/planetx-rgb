@@ -28,7 +28,7 @@ basic.forever(function () {
 
 ## See also
 
-[colour sensor value (slow)](./channel-value), [colour sensor value (fast)](./colour-fast)
+[RGB value (fast)](./fast-colour)
 
 ```package
 planetx-rgb=github:davidebert/planetx-rgb
