@@ -10,9 +10,7 @@
         "README.md",
         "main.ts",
         "docs/planetxRGB/setup-sensor.md",
-        "docs/planetxRGB/sees-silver.md",
-        "docs/planetxRGB/red-fast.md",
-        "docs/planetxRGB/channel-value.md"
+        "docs/planetxRGB/fast-colour.md"
     ],
     "testFiles": [
         "test.ts"
